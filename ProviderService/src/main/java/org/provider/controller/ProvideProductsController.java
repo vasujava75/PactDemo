@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-public class ProviderController {
+public class ProvideProductsController {
     @GetMapping("/products")
     List<Product> all() {
         Product p1= new Product(1,"Car","Driving");
