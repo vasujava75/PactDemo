@@ -39,7 +39,7 @@ public class ConsumerPactTest {
                 .willRespondWith()
                 .status(200)
                 .body(PactDslJsonArray.arrayMinLike(2)
-                        .stringType("name", String.valueOf(PactDslJsonBody.regex("/^stop.*$/")))
+                        .stringType("name")
                         .stringType("info")
                         .integerType("id"))
                .headers(singletonMap("Content-Type", "application/json"))
