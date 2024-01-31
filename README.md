@@ -7,6 +7,9 @@ Consumer Service deliver cars
 
 Technical :- 
 
+Java 17+
+
+Pact testing included
 
 Using Spring boot 3 
 
