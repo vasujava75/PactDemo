@@ -6,7 +6,7 @@ import org.springframework.web.service.annotation.HttpExchange;
 
 import java.util.List;
 
-@HttpExchange(url ="/products", accept = "application/json", contentType = "application/json")
+@HttpExchange(url = "/products", accept = "application/json", contentType = "application/json")
 public interface ProductClient {
 
     @GetExchange

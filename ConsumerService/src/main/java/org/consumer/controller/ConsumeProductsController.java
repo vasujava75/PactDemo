@@ -1,5 +1,6 @@
 package org.consumer.controller;
 
+import lombok.Data;
 import org.consumer.client.ProductClient;
 import org.consumer.model.Car;
 import org.consumer.model.Product;
@@ -11,16 +12,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Data
 public class ConsumeProductsController {
 
-@Autowired
+
+    @Autowired
     ProductClient productClient;
+
     @GetMapping("/deliverCars")
-    List<Car> getAllCars(){
-        List<Product> productList= productClient.getAllProducts();
-       return productList.stream().filter(product->product.name().equals("Car")).map(product->{
-            return new Car(product.name(),product.id().toString());
+    public List<Car> getAllCars() {
+        List<Product> productList = productClient.getAllProducts();
+        return productList.stream().filter(product -> product.name().contains("c")).map(product -> {
+            return new Car(product.name(), product.id().toString());
         }).collect(Collectors.toList());
     }
+
 
 }
